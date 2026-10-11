@@ -3,7 +3,8 @@
 Ce dépôt sert à suivre **l’évolution du code, les corrections de bugs et les décisions techniques** des Carnets de Léka.
 
 Il ne publie pas le site complet. L’objectif est d’avoir un historique lisible de ce qui a changé, pourquoi cela a changé et, quand cela est utile, quelles parties du code ont été touchées.
-
+Le site est actuellement 99% statique en Html5/Css3 & Js, une toute petite branche en PHP sans base de données. 
+On use du localstorage, du navigateur de l'internaute :)
 
 ## Lire l’historique
 
