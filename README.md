@@ -1,6 +1,7 @@
 # Les Carnets de Léka — correctifs publics
 
 Ce dépôt est volontairement **limité aux correctifs**.
+Pour le contenu global, il peut être mis à disposition sur demande (je me réserve le droit de refuser en fonction du projet)
 
 Le code source complet du site, les contenus, les médias et les fichiers de production ne sont **pas publiés ici**.
 
