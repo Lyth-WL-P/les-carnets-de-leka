@@ -1,4 +1,4 @@
-# Empêche d'ajouter accidentellement des archives ou sauvegardes du site
+# Paquets et sauvegardes du site
 *.zip
 *.tar
 *.tar.gz
@@ -11,7 +11,7 @@
 *.local.php
 config.local.php
 
-# Données et sauvegardes
+# Données / sauvegardes
 *.sql
 *.sqlite
 *.db

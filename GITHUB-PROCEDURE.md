@@ -1,65 +1,17 @@
-# Publier uniquement les correctifs sur GitHub
+# Remplacer proprement l’ancien contenu du dépôt
 
-L'objectif est de rendre visibles les évolutions sans publier le site complet.
+Oui, tu peux supprimer les fichiers actuellement ajoutés sur GitHub et les remplacer par ce dossier.
 
-## 1. Créer un dépôt GitHub séparé
+## Méthode simple depuis GitHub
 
-Sur GitHub :
+1. Supprimer les anciens fichiers `CHANGELOG.md`, `HISTORIQUE-DATE.md`, `README.md` et l’ancien dossier `historique/`.
+2. Conserver le dépôt lui-même : inutile de recréer le repository.
+3. Envoyer à la racine le contenu de ce dossier.
+4. Vérifier que la racine contient notamment `README.md`, `EVOLUTION-CODE.md`, `CHANGELOG.md`, `HISTORIQUE-DATE.md`, `historique/` et `patches/`.
+5. Faire un commit avec un message comme : `Reconstruction de l'historique complet du développement`.
 
-1. Cliquer sur **New repository**.
-2. Choisir par exemple `leka-correctifs`.
-3. Le dépôt peut être **public** si tu veux que les correctifs soient visibles publiquement.
-4. Ne pas utiliser ce dépôt pour héberger le site complet.
+## Pourquoi remplacer plutôt que superposer
 
-## 2. Décompresser ce pack
+L’ancienne présentation recensait surtout les paquets de correctifs et les chemins de fichiers. Cette nouvelle présentation raconte directement l’évolution du code, les bugs corrigés et les décisions prises à chaque version.
 
-Le dossier obtenu doit contenir uniquement :
-
-- `README.md`
-- `CHANGELOG.md`
-- `HISTORIQUE-DATE.md`
-- `GITHUB-PROCEDURE.md`
-- `historique/`
-- `patches/`
-
-Il ne doit pas contenir le dossier complet du site.
-
-## 3. Avec GitHub Desktop
-
-1. Ouvrir GitHub Desktop.
-2. **File > Add local repository** ou créer un nouveau dépôt local dans ce dossier.
-3. Vérifier dans la liste des changements qu'il n'y a que les fichiers ci-dessus.
-4. Faire un premier commit, par exemple : `V165 - correctif contact et signature`.
-5. Cliquer sur **Publish repository** et sélectionner le dépôt `leka-correctifs`.
-
-Avant de publier, vérifier une dernière fois qu'aucun fichier du site complet n'apparaît dans la liste.
-
-## 4. Avec le terminal
-
-Dans ce dossier :
-
-```bash
-git init
-git add README.md CHANGELOG.md GITHUB-PROCEDURE.md patches/
-git commit -m "V165 - correctif contact et signature"
-git branch -M main
-git remote add origin ADRESSE_DU_DEPOT_GITHUB
-git push -u origin main
-```
-
-## 5. Pour les prochaines versions
-
-Ne copie jamais tout le site dans ce dépôt. Génère seulement un nouveau fichier `.patch`, puis ajoute une entrée au `CHANGELOG.md`.
-
-Exemple :
-
-```text
-patches/V166-correction-menu-mobile.patch
-patches/V167-optimisation-contact.patch
-```
-
-Ainsi, GitHub montre les corrections et leur historique sans rendre le projet complet téléchargeable.
-
-## Important
-
-Un fichier `.patch` contient tout de même quelques lignes de contexte autour des modifications. Il révèle donc uniquement les portions de code concernées par les correctifs, pas l'arborescence complète ni tous les fichiers du site.
+Le dépôt Git conserve de toute façon l’ancien commit dans son historique : supprimer les anciens fichiers de la branche actuelle ne supprime pas le passé Git.
